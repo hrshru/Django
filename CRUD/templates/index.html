@@ -1,0 +1,32 @@
+<!doctype html>
+{% extends 'base.html' %}
+{% block body_block %}
+<head>
+</head>
+<body>
+<h1>Employee Form</h1>
+<table class="table table-striped table-dark">
+    <thead>
+    <tr>
+        <th scope="col">Eno</th>
+        <th scope="col">Ename</th>
+        <th scope="col">Esal</th>
+        <th scope="col">Eaddr</th>
+        <th scope="col">Update/Delete</th>
+    </tr>
+    </thead>
+    {% for emp in Employee %}
+<tbody>
+    <tr>
+        <td>{{ emp.Eno }}</td>
+        <td>{{ emp.Ename }}</td>
+        <td>{{ emp.Esal }}</td>
+        <td>{{ emp.Eaddr }}</td>
+        <td><a href="/update/{{ emp.id }}">Update</a> <a href="/delete/{{ emp.id }}">Delete</a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table><br><br>
+<a href="/create" class="btn btn-sucess btn-lg btn-dark">Insert New</a>
+</body>
+{% endblock %}

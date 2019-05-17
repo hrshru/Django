@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+  {%block body_block%}
+      <head>
+      <style>
+              body{
+                  background-color: palegreen;
+              }
+              h1{
+                  color: darkred;
+                  font-family: Arial;
+              }
+          form{
+              background-color: darkslategray;
+              color:white;
+              font-family: Arial;
+              text-transform: uppercase;
+              padding-top: 20px;
+          }
+           nav{
+                  text-align: center;
+                  text-transform: uppercase;
+              }
+          </style>
+      </head>
+      <body>
+  <nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Student Information Form</a>
+</nav><br><br>
+  <form method="post">
+  	{{form.as_p}}
+  	{%csrf_token%}
+  	<input type="submit" class="btn btn-primary btn-lg btn-dark" value="Insert Record"><br><br>
+  </form>
+      </body>
+  {%endblock%}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Employee Record</h1>
+<form method="post">
+    {% csrf_token %}
+    Emp Number:<input type="text" name="Eno" value="{{ Employee.Eno }}"><br>
+    Emp Name:<input type="text" name="Ename" value="{{ Employee.Ename }}"><br>
+    Emp Salary:<input type="text" name="Esal" value="{{ Employee.Esal }}"><br>
+    Emp Eaddr:<input type="text" name="Eaddr" value="{{ Employee.Eaddr }}"><br><br>
+    <button type="submit" class="btn btn-dark">Update</button>
+</form>
+
+</body>
+{% endblock %}
+</html>

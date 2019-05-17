@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block body_block %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Gallary</h1>
+<form method="post">
+    <p>name: {{ djapp4}}</p>
+    <p>DOB: {{ djapp4.DOB}}</p>
+    <p>Profile_pics: {{djapp4.pics}}</p>
+    <img src="{{djapp4.photos.image.url}}">
+    {% csrf_token %}
+</form>
+</body>
+{% endblock %}
